@@ -93,7 +93,12 @@ cp /tmp/.config .
 make modules_prepare
 cp /tmp/Module.symvers .
 cd ..
-tar cfvz rpi-linux-source-4.9.24.tar.gz linux/include linux/scripts linux/Makefile linux/Module.symvers linux/arch/arm
+tar cfvz rpi-linux-source-4.9.24.tar.gz \
+	linux/include linux/scripts linux/Makefile linux/Module.symvers \
+	linux/arch/arm/boot/dts/include \
+	linux/arch/arm/include \
+	linux/arch/arm/plat* \
+	linux/arch/arm/mach*
 rm -rf linux*
 ```
 
